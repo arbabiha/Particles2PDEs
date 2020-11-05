@@ -4,6 +4,10 @@ Source code for "Particles to PDEs Parsimoniously" by Arbabi & Kevrekidis 2020
 
 Using first prinicples leads to microscopic evolution laws for physical, chemical and biological systems (e.g. lattice dynamics in crystals, molecular interaction in reactions or neuron response in tissue). Yet some of these systems may also admit coarse-grained evolution laws, e.g. in the form of PDEs, which can lead to huge savings in computation. We propose a frameowrk for 1) identifying the coarse-grained variable from data and 2) finding the PDE that governs that variable evolution. The example we use is a model of collective particle motion that leads to the Burgers PDE at the coarse-level description.
 
+The below figures, taken from the above paper, shows the setup for discovering the coarse variable from particle data. We look collect particle distributions ($\mu_i, i=1,2,\ldots,m$) from simulations, thinking of each distribution as a data point, we hypothesize that the data cloud lies close to a low-dimensional manifold. The coordinates of that manifold, equipped with unbalanced optimal transport distance $d_W$, and mined via Diffusion Maps (kernel matrix $W$), are our candidates for coarse-grained variable. In the example, the discovered coordinate is one-to-one with density field (proportional to zeroth moment $M_0$).
+
+
+
 <img src="../master/thehood/sketch1.png" width="750">
 <img src="../master/thehood/distances_and_moments.png" width="750">
 
